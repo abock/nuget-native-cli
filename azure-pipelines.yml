@@ -1,0 +1,9 @@
+trigger:
+- main
+
+pool:
+  vmImage: macOS-latest
+
+steps:
+- script: make
+  displayName: Build
