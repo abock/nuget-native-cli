@@ -1,0 +1,16 @@
+name: Build nuget-native-cli
+
+on: [ push, pull_request ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build nuget-native-cli
+        run: make all
+      - run: ls -lhR bin
+      - uses: actions/upload-artifact@v2
+        with:
+          name: nuget-native-cli
+          path: bin/**
