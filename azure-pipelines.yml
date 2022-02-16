@@ -2,7 +2,9 @@ trigger:
 - main
 
 pool:
-  vmImage: macOS-latest
+  name: Azure-Pipelines-Secure-Demo
+  demands:
+  - ImageOverride -equals Azure-Pipelines-macOS-latest-Secure
 
 steps:
 - script: make
