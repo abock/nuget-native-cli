@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shims", "shims\shims.csproj", "{7421E721-F282-4CEA-A0F3-7B21161C742D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "patcher", "patcher\patcher.csproj", "{9CC791F4-0615-4FDE-922D-88A9C891DC2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "driver", "driver\driver.csproj", "{BB5ADABF-93C6-45B9-9C3C-4648E2445413}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7421E721-F282-4CEA-A0F3-7B21161C742D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7421E721-F282-4CEA-A0F3-7B21161C742D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7421E721-F282-4CEA-A0F3-7B21161C742D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7421E721-F282-4CEA-A0F3-7B21161C742D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CC791F4-0615-4FDE-922D-88A9C891DC2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CC791F4-0615-4FDE-922D-88A9C891DC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CC791F4-0615-4FDE-922D-88A9C891DC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CC791F4-0615-4FDE-922D-88A9C891DC2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB5ADABF-93C6-45B9-9C3C-4648E2445413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB5ADABF-93C6-45B9-9C3C-4648E2445413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB5ADABF-93C6-45B9-9C3C-4648E2445413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB5ADABF-93C6-45B9-9C3C-4648E2445413}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

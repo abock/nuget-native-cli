@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <PublishSingleFile>true</PublishSingleFile>
+    <RuntimeIdentifiers>osx-x64;linux-x64</RuntimeIdentifiers>
+    <PublishReadyToRun>true</PublishReadyToRun>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="NuGet.CommandLine" Version="6.2.0" PrivateAssets="all"/>
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="6.0.1" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="6.0.0" />
+    <PackageReference Include="System.Security.Permissions" Version="6.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\shims\shims.csproj"/>
+  </ItemGroup>
+  <Target Name="PatchAndLinkNuGet" BeforeTargets="ResolveAssemblyReferences">
+    <PropertyGroup>  
+      <PatchedNuGetAssembly>$(IntermediateOutputPath)NuGet.dll</PatchedNuGetAssembly>
+      <AssemblySearchPaths>$(MSBuildThisFileDirectory)netfx;$(AssemblySearchPaths)</AssemblySearchPaths>
+    </PropertyGroup>
+    <Exec Command="dotnet run --project ../patcher/patcher.csproj -- &quot;$(PkgNuGet_CommandLine)/tools/NuGet.exe&quot; &quot;$(PatchedNuGetAssembly)&quot;" />
+    <ItemGroup>
+      <Reference Include="$(PatchedNuGetAssembly)"/>
+    </ItemGroup>
+  </Target>
+  <Target Name="RenamePublishedBinary" AfterTargets="Publish">
+    <Move SourceFiles="$(PublishDir)$(AssemblyName)" DestinationFiles="$(PublishDir)nuget"/>
+    <Delete Files="$(PublishDir)patcher"/>
+    <Message Text="nuget -> $(MSBuildThisFileDirectory)$(PublishDir)nuget" Importance="high"/>
+  </Target>
+</Project>
